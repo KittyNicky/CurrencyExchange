@@ -1,0 +1,63 @@
+# CurrencyExchangeAPI
+
+###
+# @name currencies
+# Get all currencies
+GET http://localhost:8082/currencies
+Content-Type: application/json
+
+###
+# @name currency/USD
+# Get currency by code
+GET http://localhost:8082/currency/USD
+
+###
+# @name currencies
+# Post currency
+POST http://localhost:8082/currencies?
+    name=Chinese yuan&
+    code=CNY&
+    sign=¥
+
+###
+# @name exchangeRates
+# Get all exchange rates
+GET http://localhost:8082/exchangeRates
+
+###
+# @name exchangeRates
+# Post exchange rate
+POST http://localhost:8082/exchangeRates?
+    baseCurrencyCode=CNY&
+    targetCurrencyCode=RUB&
+    rate=12.5756
+
+###
+# @name exchangeRate/USDRUB
+# Patch exchange rate by currency codes
+PATCH http://localhost:8082/exchangeRate/EURRUB?
+    rate=98.8767
+
+###
+# @name exchange/direct
+# Get direct exchange
+GET http://localhost:8082/exchange?
+    from=USD&
+    to=RUB&
+    amount=11.50
+
+###
+# @name exchange/reverse
+# Get reverse exchange
+GET http://localhost:8082/exchange?
+    from=RUB&
+    to=USD&
+    amount=999.99
+
+###
+# @name exchange/throughCommonCurrency
+# Get exchange ?hrough the ?ommon currency "RUB"
+GET http://localhost:8082/exchange?
+    from=USD&
+    to=CNY&
+    amount=12.32
