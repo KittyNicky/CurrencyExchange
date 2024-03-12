@@ -10,6 +10,7 @@ Content-Type: application/json
 # @name currency/USD
 # Get currency by code
 GET http://localhost:8082/currency/USD
+Content-Type: application/json
 
 ###
 # @name currencies
@@ -18,11 +19,18 @@ POST http://localhost:8082/currencies?
     name=Chinese yuan&
     code=CNY&
     sign=¥
+Content-Type: application/json
 
 ###
 # @name exchangeRates
 # Get all exchange rates
 GET http://localhost:8082/exchangeRates
+Content-Type: application/json
+
+###
+# @name exchangeRate/USDRUB
+GET http://localhost:8082/exchangeRate/USDRUB
+Content-Type: application/json
 
 ###
 # @name exchangeRates
@@ -31,12 +39,14 @@ POST http://localhost:8082/exchangeRates?
     baseCurrencyCode=CNY&
     targetCurrencyCode=RUB&
     rate=12.5756
+Content-Type: application/json
 
 ###
 # @name exchangeRate/USDRUB
 # Patch exchange rate by currency codes
 PATCH http://localhost:8082/exchangeRate/EURRUB?
     rate=98.8767
+Content-Type: application/json
 
 ###
 # @name exchange/direct
@@ -44,7 +54,8 @@ PATCH http://localhost:8082/exchangeRate/EURRUB?
 GET http://localhost:8082/exchange?
     from=USD&
     to=RUB&
-    amount=11.50
+    amount=10.50
+Content-Type: application/json
 
 ###
 # @name exchange/reverse
@@ -52,12 +63,14 @@ GET http://localhost:8082/exchange?
 GET http://localhost:8082/exchange?
     from=RUB&
     to=USD&
-    amount=999.99
+    amount=1500
+Content-Type: application/json
 
 ###
 # @name exchange/throughCommonCurrency
-# Get exchange ?hrough the ?ommon currency "RUB"
+# Get exchange through the сommon currency "RUB"
 GET http://localhost:8082/exchange?
     from=USD&
     to=CNY&
-    amount=12.32
+    amount=10.50
+Content-Type: application/json

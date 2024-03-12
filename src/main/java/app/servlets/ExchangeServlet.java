@@ -54,7 +54,6 @@ public class ExchangeServlet extends HttpServlet {
 
         exchange = getExchangeThroughCommonCurrency(baseCurrencyCode, targetCurrencyCode, amount);
         return exchange;
-
     }
 
     private Optional<Exchange> getDirectExchange(String baseCurrencyCode, String targetCurrencyCode, BigDecimal amount) {
